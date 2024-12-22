@@ -1,6 +1,6 @@
 clear
 addpath(genpath(pwd));
-[filename,filepath]=uigetfile('*.bin','打开文件','MultiSelect', 'on');
+[filename,filepath]=uigetfile('*.bin','OPEN','MultiSelect', 'on');
 
     address=[filepath,filename];
     fid=fopen(address,'r');                     
@@ -56,7 +56,7 @@ while window*(aa+2)<num_rec
     clear siga
 N2=length(sigrec);
 spectral_resolution=fs/N2;
-freqstart=fix(1.6e6/spectral_resolution); freqstop=fix(3e6/spectral_resolution); %做FFT的频率区间 
+freqstart=fix(1.6e6/spectral_resolution); freqstop=fix(3e6/spectral_resolution); 
     n2=0:N2-1;
     f2=n2*fs/N2;
     Xrec=fft(sigrec,N2);
